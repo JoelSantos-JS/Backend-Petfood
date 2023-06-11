@@ -1,20 +1,9 @@
-package com.petfood.Backend.Petfood.model;
+package com.petfood.Backend.Petfood.dto;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.petfood.Backend.Petfood.model.Petshop;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+public class PetshopDTO {
 
-@Entity
-@Table(name = "petshop")
-public class Petshop {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String logo;
@@ -22,20 +11,18 @@ public class Petshop {
     private String emphasis;
     private Object location;
 
-    @ManyToMany(mappedBy = "petshops")
-    private Set<Product> products = new HashSet<>();
-
-    public Petshop() {
+    public PetshopDTO() {
 
     }
 
-    public Petshop(Long id, String name, String logo, String category, String emphasis, Object location) {
-        this.id = id;
-        this.name = name;
-        this.logo = logo;
-        this.category = category;
-        this.emphasis = emphasis;
-        this.location = location;
+    public PetshopDTO(Petshop petshop) {
+        this.id = petshop.getId();
+        this.name = petshop.getName();
+        this.logo = petshop.getLogo();
+        this.category = petshop.getCategory();
+        this.emphasis = petshop.getEmphasis();
+        this.location = petshop.getLocation();
+
     }
 
     public Long getId() {

@@ -25,7 +25,7 @@ public class Product {
 
     @ManyToMany
     @JoinTable(name = "tb_product_petshop", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "petshop_id"))
-    private Set<Petshop> petshop = new HashSet<>();
+    private Set<Petshop> petshops = new HashSet<>();
 
     public Product() {
 
