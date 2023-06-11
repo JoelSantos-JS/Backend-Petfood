@@ -39,6 +39,10 @@ public class Product {
         this.avaliations = avaliations;
     }
 
+    public Set<Petshop> getPetshops() {
+        return petshops;
+    }
+
     public long getId() {
         return id;
     }
@@ -77,14 +81,6 @@ public class Product {
 
     public void setAvaliations(String avaliations) {
         this.avaliations = avaliations;
-    }
-
-    public Set<Petshop> getPetshop() {
-        return petshop;
-    }
-
-    public void setPetshop(Set<Petshop> petshop) {
-        this.petshop = petshop;
     }
 
 }

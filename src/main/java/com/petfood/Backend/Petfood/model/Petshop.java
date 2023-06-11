@@ -20,7 +20,7 @@ public class Petshop {
     private String logo;
     private String category;
     private String emphasis;
-    private Object location;
+    private String location;
 
     @ManyToMany(mappedBy = "petshops")
     private Set<Product> products = new HashSet<>();
@@ -29,7 +29,7 @@ public class Petshop {
 
     }
 
-    public Petshop(Long id, String name, String logo, String category, String emphasis, Object location) {
+    public Petshop(Long id, String name, String logo, String category, String emphasis, String location) {
         this.id = id;
         this.name = name;
         this.logo = logo;
@@ -78,11 +78,11 @@ public class Petshop {
         this.emphasis = emphasis;
     }
 
-    public Object getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Object location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
