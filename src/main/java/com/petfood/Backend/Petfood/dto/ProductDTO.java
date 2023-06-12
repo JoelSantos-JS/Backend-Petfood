@@ -15,7 +15,7 @@ public class ProductDTO {
     private double price;
     private String avaliations;
 
-    private List<PetshopDTO> petshops = new ArrayList<>();
+    private List<PetshopDTO> petshop = new ArrayList<>();
 
     public ProductDTO() {
 
@@ -33,7 +33,7 @@ public class ProductDTO {
     public ProductDTO(Product product, Set<Petshop> petshop) {
         this(product);
 
-        petshop.stream().forEach(e -> this.petshops.add(new PetshopDTO(e)));
+        petshop.stream().forEach(e -> this.petshop.add(new PetshopDTO(e)));
     }
 
     public long getId() {
