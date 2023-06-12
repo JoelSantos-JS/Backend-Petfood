@@ -13,7 +13,7 @@ public class PetshopDTO {
     private String category;
     @JsonIgnore
     private String emphasis;
-    private Object location;
+    private String location;
 
     public PetshopDTO() {
 
@@ -69,11 +69,11 @@ public class PetshopDTO {
         this.emphasis = emphasis;
     }
 
-    public Object getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Object location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 

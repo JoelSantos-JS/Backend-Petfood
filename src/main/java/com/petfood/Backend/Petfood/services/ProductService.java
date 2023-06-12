@@ -68,6 +68,12 @@ public class ProductService {
         product.setPrice(dto.getPrice());
         product.setAvaliations(dto.getAvaliations());
         product.setCape(dto.getCape());
+        product.getPetshops().clear();
+
+        for (PetshopDTO petshopDTO : dto.getPetshop()) {
+            Petshop petshop = petshopRepository.getOne(petshopDTO.getId());
+            product.getPetshops().add(petshop);
+        }
 
         product = productRepository.save(product);
 
@@ -76,7 +82,12 @@ public class ProductService {
     }
 
     public void deleteById(Long id) {
-        productRepository.deleteById(id);
+        try {
+            productRepository.deleteById(id);
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new RuntimeException("Não foi possivel deletar o produto");
+        }
 
     }
 
