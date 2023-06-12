@@ -1,13 +1,17 @@
 package com.petfood.Backend.Petfood.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.petfood.Backend.Petfood.model.Petshop;
 
 public class PetshopDTO {
 
     private Long id;
     private String name;
+
+    @JsonIgnore
     private String logo;
     private String category;
+    @JsonIgnore
     private String emphasis;
     private Object location;
 

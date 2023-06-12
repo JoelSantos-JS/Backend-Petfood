@@ -1,6 +1,7 @@
 package com.petfood.Backend.Petfood.dto;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ public class ProductDTO {
     private double price;
     private String avaliations;
 
-    private List<PetshopDTO> petshop = new ArrayList<>();
+    Set<PetshopDTO> petshop = new HashSet<>();
 
     public ProductDTO() {
 
@@ -28,12 +29,16 @@ public class ProductDTO {
         this.cape = product.getCape();
         this.price = product.getPrice();
         this.avaliations = product.getAvaliations();
+        product.getPetshops().forEach(e -> this.petshop.add(new PetshopDTO(e)));
     }
 
     public ProductDTO(Product product, Set<Petshop> petshop) {
         this(product);
 
-        petshop.stream().forEach(e -> this.petshop.add(new PetshopDTO(e)));
+    }
+
+    public Set<PetshopDTO> getPetshop() {
+        return petshop;
     }
 
     public long getId() {
