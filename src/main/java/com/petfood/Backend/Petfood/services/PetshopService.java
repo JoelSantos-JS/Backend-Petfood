@@ -8,9 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.petfood.Backend.Petfood.dto.PetshopDTO;
 import com.petfood.Backend.Petfood.dto.PetshopDTO;
+import com.petfood.Backend.Petfood.model.Location;
 import com.petfood.Backend.Petfood.model.Petshop;
 import com.petfood.Backend.Petfood.model.Petshop;
-
+import com.petfood.Backend.Petfood.repository.LocationRepository;
 import com.petfood.Backend.Petfood.repository.PetshopRepository;
 import com.petfood.Backend.Petfood.repository.ProductRepository;
 
@@ -22,6 +23,9 @@ public class PetshopService {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private LocationRepository locationRepository;
 
     @Transactional(readOnly = true)
     public Page<PetshopDTO> findAll(Pageable pageable) {
@@ -44,8 +48,8 @@ public class PetshopService {
         Petshop.setName(dto.getName());
         Petshop.setCategory(dto.getCategory());
         Petshop.setEmphasis(dto.getEmphasis());
-        Petshop.setLocation(dto.getLocation());
         Petshop.setLogo(dto.getLogo());
+        Petshop.setLocation(dto.getLocation());
 
         Petshop = petshopRepository.save(Petshop);
 
@@ -59,8 +63,9 @@ public class PetshopService {
         Petshop.setName(dto.getName());
         Petshop.setCategory(dto.getCategory());
         Petshop.setEmphasis(dto.getEmphasis());
-        Petshop.setLocation(dto.getLocation());
+
         Petshop.setLogo(dto.getLogo());
+        Petshop.setLocation(dto.getLocation());
 
         Petshop = petshopRepository.save(Petshop);
 

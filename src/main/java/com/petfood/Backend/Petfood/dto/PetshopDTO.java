@@ -1,6 +1,10 @@
 package com.petfood.Backend.Petfood.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.petfood.Backend.Petfood.model.Location;
 import com.petfood.Backend.Petfood.model.Petshop;
 
 public class PetshopDTO {
@@ -13,7 +17,8 @@ public class PetshopDTO {
     private String category;
     @JsonIgnore
     private String emphasis;
-    private String location;
+
+    private Location location;
 
     public PetshopDTO() {
 
@@ -27,6 +32,14 @@ public class PetshopDTO {
         this.emphasis = petshop.getEmphasis();
         this.location = petshop.getLocation();
 
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Long getId() {
@@ -67,14 +80,6 @@ public class PetshopDTO {
 
     public void setEmphasis(String emphasis) {
         this.emphasis = emphasis;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
 }

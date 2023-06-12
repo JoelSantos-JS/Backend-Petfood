@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.petfood.Backend.Petfood.model.Location;
 import com.petfood.Backend.Petfood.model.Petshop;
 import com.petfood.Backend.Petfood.model.Product;
 import com.petfood.Backend.Petfood.repository.PetshopRepository;
@@ -23,9 +24,8 @@ public class DbService {
     public void instanciaBaseDeDados() {
         List<Product> product = new ArrayList<>();
         List<Petshop> petshops = new ArrayList<>();
-
-        petshops.add(new Petshop(1L, "PetShop ", "salve", "raçao", "cachorro ", "rua centro"));
-        petshops.add(new Petshop(2L, "PetShop ", "salve", "raçao", "gato ", "rua machado"));
+        Location location = new Location(1L, 50040, 544444);
+        petshops.add(new Petshop(1L, "PetShop ", "salve", "raçao", "cachorro ", location));
 
         petshopRepository.saveAll(petshops);
 
