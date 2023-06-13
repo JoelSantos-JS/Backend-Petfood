@@ -13,8 +13,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private int lat;
-    private int len;
+    private double lat;
+    private double len;
 
     // Construtor
 
@@ -22,22 +22,22 @@ public class Location {
 
     }
 
-    public Location(long id, int lat, int len) {
+    public Location(long id, Double lat, Double len) {
         this.id = id;
         this.lat = lat;
         this.len = len;
     }
 
     // Getters e Setters
-    public int getLat() {
+    public double getLat() {
         return lat;
     }
 
-    public void setLat(int lat) {
+    public void setLat(Double lat) {
         this.lat = lat;
     }
 
-    public int getLen() {
+    public double getLen() {
         return len;
     }
 
@@ -45,7 +45,7 @@ public class Location {
         this.len = len;
     }
 
-    public long getId() {
+    public double getId() {
         return id;
     }
 

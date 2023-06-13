@@ -12,10 +12,9 @@ public class PetshopDTO {
     private Long id;
     private String name;
 
-    @JsonIgnore
     private String logo;
     private String category;
-    @JsonIgnore
+
     private String emphasis;
 
     private Location location;

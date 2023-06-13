@@ -41,6 +41,7 @@ public class Product {
 
     public Set<Petshop> getPetshops() {
         return petshops;
+
     }
 
     public long getId() {
